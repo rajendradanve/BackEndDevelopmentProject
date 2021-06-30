@@ -1,7 +1,7 @@
 import os
 import json
 from flask import Flask, render_template, request, flash
-if os.path.exists("eny.py"):
+if os.path.exists("env.py"):
     import env
 
 app = Flask(__name__)
@@ -46,7 +46,8 @@ def contact():
 def careers():
     return render_template("careers.html", page_title="Careers")
 
+
 if __name__ == "__main__":
-    app.run(host = os.environ.get("IP", "0.0.0.0"),
-    port = int(os.environ.get("PORT", "5000")),
-    debug = True)
+    app.run(host=os.environ.get("IP", "0.0.0.0"),
+    port=int(os.environ.get("PORT", "5000")),
+    debug=True)
